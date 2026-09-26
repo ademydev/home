@@ -67,7 +67,7 @@ const ARCHIVE_DATA = {
 },
 
     {
-  id: 1,
+  id: 2,
   title: "CS50 directory",
   description: "The CS50 Directory is a dedicated web platform or community index where students of Harvard's popular computer science course can showcase their projects, create profiles, and connect with fellow learners.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -77,8 +77,30 @@ const ARCHIVE_DATA = {
   ]
 },
 
+    {
+  id: 2,
+  title: "MEKKE’NİN TARİHÎ ÖNEMİ",
+  description: "Bu web sitesi, Mekke'nin tarihi ve İslam peygamberi Hz. Muhammed'in hayatını (Siyer-i Nebi) detaylı ve kronolojik bir şekilde ele alan dijital bir bilgi platformudur.",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Mekke Tarihi", "siteler"], 
+  links: [
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" },
+  ]
+},
+
+    {
+  id: 2,
+  title: "Fıkıh Usulü",
+  description: "Bu web sitesi, İslâm hukukunun delil, yöntem ve kurallar çerçevesinde anlaşılmasını sağlayan fıkıh usulü ilmini tanımı, amacı, temel kaynakları ve metodolojisiyle ele alan dijital bir bilgi platformudur",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Fıkıh Usulü", "siteler"], 
+  links: [
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/fikihusulu/" },
+  ]
+},
+
 {
-  id: 1,
+  id: 3,
   title: "Preferences Grammar Guide",
   description: "The English grammar topic of 'Preferences' explains how to express choices using the structures prefer for general habits, and would prefer or would rather for specific, situational choices.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -91,7 +113,7 @@ const ARCHIVE_DATA = {
 
 
 {
-  id: 1,
+  id: 4,
   title: "Yakın Kampüs Python eğitimi",
   description: "aktif bir çalışma olduğu için sadece github linki vardır.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -102,7 +124,7 @@ const ARCHIVE_DATA = {
 },
 
 {
-  id: 1,
+  id: 5,
   title: "basit seviye Python eğitimi",
   description: "bu eğitim tamamlanmış bir derstir dosyaları indirme linkine ulaşabilirsiniz.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:

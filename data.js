@@ -151,21 +151,7 @@ const ARCHIVE_DATA = {
   title: "Siyer Dersi Performans Ödevi",
   description: "Sayfa 22 - (Adem Yavuz ÇAKIR - Abdüssamet Karisli - Ahmet Eymen KOSMANA)",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
-  categories: ["GRUP ÇALIŞMASI", "grup-calismalari"], 
-  links: [
-    { type: "pdf", title: "PDF İndir", url: "files/siyer-araştırma-sonucu-1.pdf" },
-    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" },
-    { type: "presentation", title: "Sunum İndir", url: "files/Mekke_Renkli_Gecisli_Sunum.pptx" },
-    { type: "file", title: "Dosya İndir", url: "files/sayfa22-siyer-performans.zip" }
-  ]
-},
-
-{
-  id: 9,
-  title: "Siyer Dersi Performans Ödevi",
-  description: "Sayfa 22 - (Adem Yavuz ÇAKIR - Abdüssamet Karisli - Ahmet Eymen KOSMANA)",
-  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
-  categories: ["PERFORMANS ÖDEVİ", "performans-odevleri"], 
+  categories: ["Performans Görevi ve Grup Çalışması", "..." ,"performans-odevleri", "grup-calismalari", "siyer"], 
   links: [
     { type: "pdf", title: "PDF İndir", url: "files/siyer-araştırma-sonucu-1.pdf" },
     { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" },

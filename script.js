@@ -7,6 +7,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const appElement = document.getElementById("app");
   const breadcrumbElement = document.getElementById("breadcrumb");
   const homeLinkElement = document.getElementById("home-link");
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  // Tema Yönetimi (Dark / Light Mode)
+  initTheme();
+
+  function initTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+    applyTheme(initialTheme);
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+      });
+    }
+  }
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      if (themeIcon) themeIcon.textContent = "☀️";
+      if (themeToggleBtn) themeToggleBtn.setAttribute("title", "Açık Mod'a geç");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      if (themeIcon) themeIcon.textContent = "🌙";
+      if (themeToggleBtn) themeToggleBtn.setAttribute("title", "Karanlık Mod'a geç");
+      localStorage.setItem("theme", "light");
+    }
+  }
 
   if (homeLinkElement) {
     homeLinkElement.addEventListener("click", (e) => {

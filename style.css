@@ -1,23 +1,63 @@
 /* ===================================================
    KİŞİSEL ÇALIŞMA ARŞİVİ - STYLE.CSS
-   Sade, minimal, hızlı ve okunabilir dosya arşivi stili
+   Sade, minimal, modern, hızlı ve okunabilir dosya arşivi stili
+   Light / Dark Mode desteği ile
    =================================================== */
 
 :root {
-  --bg-color: #f7f9fa;
+  /* Açık Tema (Light Mode) */
+  --bg-color: #f8fafc;
   --surface-color: #ffffff;
+  --surface-secondary: #f1f5f9;
   --border-color: #e2e8f0;
   --border-hover: #cbd5e1;
-  --text-main: #1e293b;
+  --text-main: #0f172a;
   --text-muted: #64748b;
+  --text-subtle: #94a3b8;
   --primary-color: #0f172a;
   --accent-blue: #2563eb;
   --accent-blue-hover: #1d4ed8;
+  --accent-blue-subtle: #eff6ff;
   --tag-bg: #f1f5f9;
   --tag-text: #475569;
+  --tag-border: #e2e8f0;
+  --btn-bg: #ffffff;
+  --btn-border: #e2e8f0;
+  --btn-hover-bg: #f8fafc;
+  --btn-hover-border: #cbd5e1;
+  --card-hover-bg: #fbfcfe;
+  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 4px 6px -1px rgba(15, 23, 42, 0.07);
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --container-max-width: 900px;
-  --radius: 6px;
+  --container-max-width: 920px;
+  --radius: 8px;
+  --radius-sm: 5px;
+}
+
+/* Karanlık Tema (Dark Mode) */
+[data-theme="dark"] {
+  --bg-color: #0b111e;
+  --surface-color: #111a2e;
+  --surface-secondary: #17223b;
+  --border-color: #24324d;
+  --border-hover: #374768;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --primary-color: #f8fafc;
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --accent-blue-subtle: #1e2e4e;
+  --tag-bg: #17243c;
+  --tag-text: #93c5fd;
+  --tag-border: #23375d;
+  --btn-bg: #141f36;
+  --btn-border: #24324d;
+  --btn-hover-bg: #1a2948;
+  --btn-hover-border: #3b82f6;
+  --card-hover-bg: #152038;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -30,9 +70,12 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.5;
+  line-height: 1.55;
   font-size: 15px;
-  padding: 24px 16px 60px;
+  padding: 28px 20px 64px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .site-container {
@@ -43,18 +86,61 @@ body {
 /* Üst Başlık & Navigasyon */
 header {
   margin-bottom: 24px;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .brand-title {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, opacity 0.15s ease;
+}
+
+.brand-title:hover {
+  opacity: 0.85;
+}
+
+.theme-toggle-btn {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--btn-hover-bg);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(0);
+}
+
+.theme-toggle-icon {
+  user-select: none;
   display: inline-block;
-  margin-bottom: 12px;
 }
 
 .breadcrumb {
@@ -62,7 +148,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
@@ -70,15 +156,22 @@ header {
   color: var(--accent-blue);
   text-decoration: none;
   cursor: pointer;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .breadcrumb a:hover {
-  text-decoration: underline;
+  background-color: var(--accent-blue-subtle);
+  color: var(--accent-blue-hover);
+  text-decoration: none;
 }
 
 .breadcrumb-separator {
-  color: var(--text-muted);
+  color: var(--text-subtle);
   user-select: none;
+  font-size: 0.8rem;
 }
 
 .breadcrumb-current {
@@ -91,34 +184,39 @@ main {
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 24px;
-  min-height: 380px;
+  padding: 26px;
+  min-height: 420px;
+  box-shadow: var(--shadow-subtle);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .view-header {
-  margin-bottom: 20px;
-  padding-bottom: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  transition: border-color 0.2s ease;
 }
 
 .view-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-main);
+  letter-spacing: -0.3px;
 }
 
 .view-count {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* Klasör & Kategori Listeleri */
 .grid-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 12px;
 }
 
@@ -127,68 +225,91 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background-color: #fff;
+  background-color: var(--surface-color);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   color: var(--text-main);
   cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .grid-card:hover {
   border-color: var(--border-hover);
-  background-color: #f8fafc;
+  background-color: var(--card-hover-bg);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
 }
 
 .grid-card-title {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   font-weight: 500;
+  color: var(--text-main);
 }
 
 .grid-card-icon {
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  opacity: 0.8;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.grid-card:hover .grid-card-icon {
+  opacity: 1;
 }
 
 /* Çalışma / İçerik Kartları */
 .items-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .item-card {
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 16px;
-  background-color: #ffffff;
+  padding: 18px;
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.item-card:hover {
+  border-color: var(--border-hover);
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 6px;
+  gap: 16px;
+  margin-bottom: 8px;
 }
 
 .item-title {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: var(--text-main);
+  line-height: 1.4;
+  letter-spacing: -0.2px;
 }
 
 .item-date {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   white-space: nowrap;
+  padding: 2px 8px;
+  background-color: var(--surface-secondary);
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .item-desc {
-  font-size: 0.9rem;
+  font-size: 0.91rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  line-height: 1.55;
+  margin-bottom: 14px;
 }
 
 .item-footer {
@@ -197,11 +318,13 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px dashed var(--border-color);
+  transition: border-color 0.2s ease;
 }
 
+/* Kategori Etiketleri */
 .item-categories {
   display: flex;
   flex-wrap: wrap;
@@ -209,14 +332,18 @@ main {
 }
 
 .category-tag {
-  font-size: 0.75rem;
-  padding: 2px 8px;
+  font-size: 0.74rem;
+  padding: 3px 9px;
   border-radius: 4px;
   background-color: var(--tag-bg);
   color: var(--tag-text);
+  border: 1px solid var(--tag-border);
   font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Bağlantı Butonları */
 .item-links {
   display: flex;
   flex-wrap: wrap;
@@ -226,57 +353,64 @@ main {
 .item-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  font-size: 0.85rem;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 0.84rem;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--btn-border);
   color: var(--text-main);
-  background-color: #fff;
+  background-color: var(--btn-bg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: all 0.15s ease;
 }
 
 .item-link:hover {
-  background-color: #f1f5f9;
-  border-color: var(--border-hover);
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border);
   color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.item-link:active {
+  transform: translateY(0);
 }
 
 /* Boş Klasör / Durum Mesajı */
 .empty-state {
   text-align: center;
-  padding: 48px 16px;
+  padding: 56px 16px;
   color: var(--text-muted);
 }
 
 .empty-state-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  opacity: 0.7;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  opacity: 0.6;
 }
 
 .empty-state p {
   font-size: 0.95rem;
 }
 
-/* Footer Bilgilendirme */
+/* Footer */
 footer {
   margin-top: 32px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
 /* Mobil Uyumluluk */
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   body {
-    padding: 16px 12px 40px;
+    padding: 16px 12px 48px;
   }
 
   main {
-    padding: 16px;
+    padding: 18px 14px;
+    min-height: 340px;
   }
 
   .grid-list {
@@ -285,10 +419,22 @@ footer {
 
   .item-header {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 
   .item-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-links {
+    width: 100%;
+  }
+
+  .item-link {
+    flex: 1 1 auto;
+    justify-content: center;
   }
 }

@@ -27,7 +27,7 @@ const ARCHIVE_DATA = {
     { id: "dersler", title: "Dersler", hasSubcategories: true },
     { id: "grup-calismalari", title: "Grup Çalışmaları", hasSubcategories: false },
     { id: "performans-odevleri", title: "Performans Ödevleri", hasSubcategories: false },
-    { id: "projeler", title: "Projeler", hasSubcategories: false },
+    { id: "siteler", title: "Siteler", hasSubcategories: false },
     { id: "yazilim-programlari", title: "Yazılım Programları", hasSubcategories: false }
   ],
 
@@ -57,15 +57,38 @@ const ARCHIVE_DATA = {
     {
   id: 1,
   title: "12 Tenses in English",
-  description: "this web site teaches 12 tenses in English",
+  description: "The 12 English tenses are verb structures formed by combining three time frames (past, present, and future) with four aspect types (simple, continuous, perfect, and perfect continuous) to show when and how an action happens.",
   date: "2026-09-26",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
-  categories: ["İngilizce", "projeler"], 
+  categories: ["İngilizce", "siteler"], 
   links: [
-    { type: "github", title: "GitHub Deposu", url: "https://github.com/kullanici/proje" },
-    { type: "website", title: "Canlı Site", url: "https://github.com/ademydev/ingilizce" },
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/ingilizce/" },
   ]
 },
+
+    {
+  id: 1,
+  title: "CS50 directory",
+  description: "The CS50 Directory is a dedicated web platform or community index where students of Harvard's popular computer science course can showcase their projects, create profiles, and connect with fellow learners.",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["CS50", "siteler"], 
+  links: [
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/cs50directory/" },
+  ]
+},
+
+{
+  id: 1,
+  title: "Preferences Grammar Guide",
+  description: "The English grammar topic of 'Preferences' explains how to express choices using the structures prefer for general habits, and would prefer or would rather for specific, situational choices.",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Preferences", "siteler"], 
+  links: [
+    { type: "pdf", title: "PDF İndir", url: "files/preferences-grammar-guide.pdf" },
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/preferences/" },
+  ]
+},
+
 
 {
   id: 1,
@@ -86,8 +109,8 @@ const ARCHIVE_DATA = {
   categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
   links: [
     { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/basiclevelpythoneducation-" },
-    { type: "file", title: "Dosyaları İndir", url: "/home/files//basit-seviye-python-egitimi.zip" }
-  ]
+    { type: "file", title: "Dosyaları İndir", url: "https://ademydev.github.io/home/files/basit-seviye-python-eğitimi.zip" }
+  ],
 },
 
   ]

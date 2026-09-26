@@ -69,19 +69,26 @@ const ARCHIVE_DATA = {
 
 {
   id: 1,
-  title: "Çalışmanın Adı",
-  description: "İsteğe bağlı kısa açıklama",
-  date: "2026-09-26",
+  title: "Yakın Kampüs Python eğitimi",
+  description: "aktif bir çalışma olduğu için sadece github linki vardır.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
-  categories: ["matematik", "projeler"], 
+  categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
   links: [
-    { type: "pdf", title: "PDF İndir", url: "files/dosyaniz.pdf" },
-    { type: "github", title: "GitHub Deposu", url: "https://github.com/kullanici/proje" },
-    { type: "website", title: "Canlı Site", url: "https://ornek.com" },
-    { type: "presentation", title: "Sunum İndir", url: "files/sunum.pptx" },
-    { type: "file", title: "Dosya İndir", url: "files/arsiv.zip" }
+    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/yak-n-kamp-s-python-education" },
   ]
-}
+},
+
+{
+  id: 1,
+  title: "basit seviye Python eğitimi",
+  description: "bu eğitim tamamlanmış bir derstir dosyaları indirme linkine ulaşabilirsiniz.",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
+  links: [
+    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/basiclevelpythoneducation-" },
+    { type: "file", title: "Dosyaları İndir", url: "files/basit-seviye-python-egitimi.zip" }
+  ]
+},
 
   ]
 };

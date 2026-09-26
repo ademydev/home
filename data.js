@@ -86,7 +86,7 @@ const ARCHIVE_DATA = {
   categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
   links: [
     { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/basiclevelpythoneducation-" },
-    { type: "file", title: "Dosyaları İndir", url: "files/basit-seviye-python-egitimi.zip" }
+    { type: "file", title: "Dosyaları İndir", url: "home/files//basit-seviye-python-egitimi.zip" }
   ]
 },
 

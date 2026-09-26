@@ -68,7 +68,7 @@ const ARCHIVE_DATA = {
 
     {
   id: 2,
-  title: "CS50 directory",
+  title: "CS50 Directory",
   description: "The CS50 Directory is a dedicated web platform or community index where students of Harvard's popular computer science course can showcase their projects, create profiles, and connect with fellow learners.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
   categories: ["CS50", "siteler"], 
@@ -78,7 +78,7 @@ const ARCHIVE_DATA = {
 },
 
     {
-  id: 2,
+  id: 3,
   title: "MEKKE’NİN TARİHÎ ÖNEMİ",
   description: "Bu web sitesi, Mekke'nin tarihi ve İslam peygamberi Hz. Muhammed'in hayatını (Siyer-i Nebi) detaylı ve kronolojik bir şekilde ele alan dijital bir bilgi platformudur.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -89,7 +89,7 @@ const ARCHIVE_DATA = {
 },
 
     {
-  id: 2,
+  id: 4,
   title: "Fıkıh Usulü",
   description: "Bu web sitesi, İslâm hukukunun delil, yöntem ve kurallar çerçevesinde anlaşılmasını sağlayan fıkıh usulü ilmini tanımı, amacı, temel kaynakları ve metodolojisiyle ele alan dijital bir bilgi platformudur",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -100,7 +100,7 @@ const ARCHIVE_DATA = {
 },
 
 {
-  id: 3,
+  id: 5,
   title: "Preferences Grammar Guide",
   description: "The English grammar topic of 'Preferences' explains how to express choices using the structures prefer for general habits, and would prefer or would rather for specific, situational choices.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -113,9 +113,9 @@ const ARCHIVE_DATA = {
 
 
 {
-  id: 4,
-  title: "Yakın Kampüs Python eğitimi",
-  description: "aktif bir çalışma olduğu için sadece github linki vardır.",
+  id: 6,
+  title: "Yakın Kampüs Python Eğitimi",
+  description: "Aktif olarak devam etmektedir - Yakın Kampüs platformundaki Python programlama dili eğitimine ait ders içeriklerini, uygulama projelerini ve kaynak kodları barındıran açık kaynaklı GitHub deposudur.",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
   categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
   links: [
@@ -124,9 +124,9 @@ const ARCHIVE_DATA = {
 },
 
 {
-  id: 5,
-  title: "basit seviye Python eğitimi",
-  description: "bu eğitim tamamlanmış bir derstir dosyaları indirme linkine ulaşabilirsiniz.",
+  id: 7,
+  title: "basit seviye Python Eğitimi",
+  description: "Python programlama diline yeni başlayanlar için hazırlanan bu tamamlanmış eğitim setinde, derslere ait temel kaynak kodlara ve doğrudan indirilebilir tüm çalışma dosyalarına ulaşabilirsiniz",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
   categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
   links: [
@@ -135,5 +135,19 @@ const ARCHIVE_DATA = {
   ],
 },
 
+{
+  id: 6,
+  title: "Piton Aram Python Eğitimi",
+  description: "Aktif olarak devam etmektedir - Piton Aram Python Eğitimi kapsamındaki ders içeriklerini, temel programlama uygulamalarını ve kaynak kodları barındıran açık kaynaklı GitHub deposudur",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
+  links: [
+    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/piton-arm-python-education-" },
+  ]
+},
+
   ]
 };
+
+
+

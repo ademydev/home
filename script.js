@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateBreadcrumb(trail) {
-    let html = `<a href="#/">HOME</a>`;
+    let html = `<a href="#/">Bölümler</a>`;
 
     trail.forEach((crumb, index) => {
       html += `<span class="breadcrumb-separator">→</span>`;

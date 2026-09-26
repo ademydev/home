@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <span class="view-count">${ARCHIVE_DATA.sections.length} Kategori</span>
       </div>
-      <div class="grid-list">
+      <div class="grid-list grid-list-sections">
     `;
 
     ARCHIVE_DATA.sections.forEach((section, index) => {
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <span class="view-count">${ARCHIVE_DATA.subjects.length} Ders</span>
       </div>
-      <div class="grid-list">
+      <div class="grid-list grid-list-subjects">
     `;
 
     ARCHIVE_DATA.subjects.forEach((subject, index) => {

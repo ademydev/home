@@ -26,9 +26,9 @@ const ARCHIVE_DATA = {
   sections: [
     { id: "dersler", title: "Dersler", hasSubcategories: true },
     { id: "grup-calismalari", title: "Grup Çalışmaları", hasSubcategories: false },
-    { id: "performans-odevleri", title: "Performans Ödevleri", hasSubcategories: false },
-    { id: "siteler", title: "Siteler", hasSubcategories: false },
-    { id: "yazilim-programlari", title: "Yazılım Programları", hasSubcategories: false }
+    { id: "performans-odevleri", title: "Performans Ödevlerim", hasSubcategories: false },
+    { id: "siteler", title: "Sitelerim", hasSubcategories: false },
+    { id: "yazilim-programlari", title: "Yazılım Programlarım", hasSubcategories: false }
   ],
 
   // Dersler bölümü altındaki 17 ders
@@ -136,7 +136,7 @@ const ARCHIVE_DATA = {
 },
 
 {
-  id: 6,
+  id: 8,
   title: "Piton Aram Python Eğitimi",
   description: "Aktif olarak devam etmektedir - Piton Aram Python Eğitimi kapsamındaki ders içeriklerini, temel programlama uygulamalarını ve kaynak kodları barındıran açık kaynaklı GitHub deposudur",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
@@ -145,6 +145,34 @@ const ARCHIVE_DATA = {
     { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/piton-arm-python-education-" },
   ]
 },
+
+{
+  id: 9,
+  title: "Siyer Dersi Performans Ödevi",
+  description: "Sayfa 22 - (Adem Yavuz ÇAKIR - Abdüssamet Karisli - Ahmet Eymen KOSMANA)",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["GRUP ÇALIŞMASI", "grup-calismalari"], 
+  links: [
+    { type: "pdf", title: "PDF İndir", url: "files/siyer-araştırma-sonucu-1.pdf" },
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" },
+    { type: "presentation", title: "Sunum İndir", url: "files/Mekke_Renkli_Gecisli_Sunum.pptx" },
+    { type: "file", title: "Dosya İndir", url: "files/sayfa22-siyer-performans.zip" }
+  ]
+},
+
+{
+  id: 9,
+  title: "Siyer Dersi Performans Ödevi",
+  description: "Sayfa 22 - (Adem Yavuz ÇAKIR - Abdüssamet Karisli - Ahmet Eymen KOSMANA)",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["PERFORMANS ÖDEVİ", "performans-odevleri"], 
+  links: [
+    { type: "pdf", title: "PDF İndir", url: "files/siyer-araştırma-sonucu-1.pdf" },
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" },
+    { type: "presentation", title: "Sunum İndir", url: "files/Mekke_Renkli_Gecisli_Sunum.pptx" },
+    { type: "file", title: "Dosya İndir", url: "files/sayfa22-siyer-performans.zip" }
+  ]
+}
 
   ]
 };

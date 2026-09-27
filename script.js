@@ -4,6 +4,106 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // ============================================================
+  // ŞİFRE KORUMASI
+  // ============================================================
+
+  document.body.classList.add("auth-locked");
+
+  const PASSWORD_HASH =
+    "9fba88eeefdee86dd42ffd2225494da3284bc593d42fea5c60e864b0db4f7de1";
+
+  function createPasswordScreen() {
+    const overlay = document.createElement("div");
+    overlay.id = "password-screen";
+    overlay.innerHTML = `
+      <div class="password-box">
+        <div class="password-icon">
+          <svg viewBox="0 0 24 24" width="30" height="30"
+               fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round"
+               stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+
+        <div class="password-title">Archive</div>
+
+        <div class="password-subtitle">
+          Arşive erişmek için şifrenizi girin.
+        </div>
+
+        <form id="password-form" autocomplete="off">
+          <input
+            id="password-input"
+            type="password"
+            placeholder="Şifre"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          >
+
+          <button type="submit">
+            Giriş Yap
+          </button>
+
+          <div id="password-error">
+            Şifre yanlış.
+          </div>
+        </form>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const form = document.getElementById("password-form");
+    const input = document.getElementById("password-input");
+    const error = document.getElementById("password-error");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const password = input.value;
+
+      if (!password) {
+        error.textContent = "Lütfen şifrenizi girin.";
+        error.classList.add("show");
+        return;
+      }
+
+      const hash = await sha256(password);
+
+      if (hash === PASSWORD_HASH) {
+        document.body.classList.remove("auth-locked");
+        overlay.remove();
+
+        // Şifre doğru olduktan sonra siteyi başlat
+        handleRouting();
+      } else {
+        error.textContent = "Şifre yanlış.";
+        error.classList.add("show");
+
+        input.value = "";
+        input.focus();
+      }
+    });
+  }
+
+  async function sha256(text) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text);
+
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+    return Array.from(new Uint8Array(hashBuffer))
+      .map(byte => byte.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  createPasswordScreen();
+
   const appElement = document.getElementById("app");
   const breadcrumbElement = document.getElementById("breadcrumb");
   const homeLinkElement = document.getElementById("home-link");
@@ -65,8 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("hashchange", handleRouting);
-  handleRouting();
-
+  
   function handleRouting() {
     const rawHash = window.location.hash.replace(/^#\/?/, "").trim();
     const parts = rawHash ? rawHash.split("/").filter(Boolean) : [];

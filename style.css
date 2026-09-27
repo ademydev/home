@@ -644,3 +644,168 @@ footer {
     justify-content: center;
   }
 }
+
+/* ============================================================
+   ŞİFRE KORUMA EKRANI
+   ============================================================ */
+
+body.auth-locked {
+  overflow: hidden;
+}
+
+body.auth-locked .site-container {
+  visibility: hidden;
+}
+
+#password-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: var(--bg-page);
+}
+
+.password-box {
+  width: 100%;
+  max-width: 380px;
+
+  padding: 38px 34px;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--card-shadow-hover);
+
+  text-align: center;
+}
+
+.password-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--accent-blue);
+
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+}
+
+.password-title {
+  margin-bottom: 6px;
+
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  color: var(--text-main);
+}
+
+.password-subtitle {
+  margin-bottom: 24px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  color: var(--text-muted);
+}
+
+#password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#password-input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+
+  color: var(--text-main);
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#password-input:focus {
+  border-color: var(--accent-blue);
+
+  box-shadow:
+    0 0 0 3px var(--accent-subtle);
+}
+
+#password-form button {
+  width: 100%;
+
+  padding: 11px 16px;
+
+  border: 1px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+
+  background: var(--accent-blue);
+  color: white;
+
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+#password-form button:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+#password-form button:active {
+  transform: translateY(0);
+}
+
+#password-error {
+  display: none;
+
+  margin-top: 4px;
+
+  font-size: 0.8rem;
+  color: #dc2626;
+}
+
+#password-error.show {
+  display: block;
+}
+
+[data-theme="dark"] #password-screen {
+  background: var(--bg-page);
+}
+
+@media (max-width: 480px) {
+  .password-box {
+    padding: 32px 24px;
+  }
+}

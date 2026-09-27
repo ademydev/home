@@ -175,7 +175,7 @@ const ARCHIVE_DATA = {
   description: "Bu Program Aktif Olarak Kullanılmamaktadır - Sunuc açıldığı zaman kullanıma açılacak ve şifrelenecektir.",
   date: "2026-09-26",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
-  categories: ["Büyük Yazılım Projesi", "..." ,"projeler", "yazilim-programlari"], 
+  categories: ["Büyük Yazılım Projesi", "..." ,"siteler", "yazilim-programlari"], 
   links: [
     { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/gunluk-program-programi" },
     { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/gunluk-program-programi/" },

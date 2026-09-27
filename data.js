@@ -156,7 +156,18 @@ const ARCHIVE_DATA = {
     { type: "file", title: "PDF ve Sunum İndir", url: "files/sayfa22-siyer-performans.zip" },
     { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/mekketarihisiyer/" }
   ]
-}
+},
+
+{
+  id: 10,
+  title: "1 saatte HTML Kavax",
+  description: "HTML’de temel web sayfası yapısını ve kullanılan başlıca HTML etiketlerini öğrenmeyi amaçlayan bir eğitim.",
+  // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
+  categories: ["Yazılım Çalışmaları", "yazilim-programlari"], 
+  links: [
+    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/one-time-html-kavax" },
+  ]
+},
 
   ]
 };

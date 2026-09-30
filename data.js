@@ -171,7 +171,7 @@ const ARCHIVE_DATA = {
 
 {
   id: 11,
-  title: "Günlük Program Programı",
+  title: "Günlük Program Program",
   description: "Bu Program Aktif Olarak Kullanılmamaktadır - Sunuc açıldığı zaman kullanıma açılacak ve şifrelenecektir.",
   date: "2026-09-26",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:

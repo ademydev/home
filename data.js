@@ -184,14 +184,14 @@ const ARCHIVE_DATA = {
 
 {
   id: 12,
-  title: "kişisel ders programı",
-  description: "Kişisel Ders Programı, derslerini, çalışma planını ve akademik hedeflerini düzenli bir şekilde yönetmeni sağlayan modern ve bulut destekli bir planlama uygulamasıdır.",
+  title: "Ders Takip Sistemi",
+  description: "Ders Takip Sistemi, derslerini, çalışma planını ve akademik hedeflerini düzenli bir şekilde yönetmeni sağlayan modern ve bulut destekli bir planlama uygulamasıdır.",
   date: "2026-09-26",
   // Bir çalışma birden fazla kategoriye aynı anda bağlanabilir:
   categories: ["Büyük Yazılım Projesi 2", "..." ,"siteler", "yazilim-programlari"], 
   links: [
-    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/kisisel-ders-programi" },
-    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/kisisel-ders-programi/" },
+    { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/derstakipsistemi" },
+    { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/derstakipsistemi/" },
   ]
 }
 

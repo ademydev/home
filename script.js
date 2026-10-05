@@ -11,8 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.classList.add("auth-locked");
 
-  const PASSWORD_HASH =
+  // Mevcut şifre: yalnızca Grup Çalışmaları bölümüne erişir.
+  const GROUP_PASSWORD_HASH =
     "9fba88eeefdee86dd42ffd2225494da3284bc593d42fea5c60e864b0db4f7de1";
+
+  // Ana şifrenin SHA-256 özetini buraya yazın.
+  // Örnek üretmek için tarayıcı konsolunda: sha256("sifreniz")
+  // Not: Aşağıdaki değer değiştirilmeden ana şifre devreye girmez.
+  const MASTER_PASSWORD_HASH =
+    "6d3172aec2ff3f04406ba007cf160997e4c5bac06618d086ee321932c0400471";
+
+  let accessLevel = null;
 
   function createPasswordScreen() {
     const overlay = document.createElement("div");
@@ -32,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="password-title">Archive</div>
 
         <div class="password-subtitle">
-          Arşive erişmek için şifrenizi girin.
+          Arşive erişmek için şifrenizi girin.<br>
+          <small>Grup şifresi yalnızca Grup Çalışmaları bölümünü açar.</small>
         </div>
 
         <form id="password-form" autocomplete="off">
@@ -75,11 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const hash = await sha256(password);
 
-      if (hash === PASSWORD_HASH) {
+      if (hash === MASTER_PASSWORD_HASH) {
+        accessLevel = "master";
         document.body.classList.remove("auth-locked");
         overlay.remove();
-
-        // Şifre doğru olduktan sonra siteyi başlat
+        handleRouting();
+      } else if (hash === GROUP_PASSWORD_HASH) {
+        accessLevel = "group";
+        document.body.classList.remove("auth-locked");
+        overlay.remove();
         handleRouting();
       } else {
         error.textContent = "Şifre yanlış.";
@@ -170,6 +184,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const rawHash = window.location.hash.replace(/^#\/?/, "").trim();
     const parts = rawHash ? rawHash.split("/").filter(Boolean) : [];
 
+    // Grup şifresiyle yalnızca Grup Çalışmaları bölümüne izin verilir.
+    if (accessLevel === "group" && parts[0] !== "grup-calismalari") {
+      if (rawHash) window.location.hash = "#/grup-calismalari";
+      renderGroupOnlyHome();
+      return;
+    }
+
     if (parts.length === 0) {
       renderHome();
     } else if (parts[0] === "dersler") {
@@ -183,6 +204,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const sectionId = parts[0];
       renderSectionDetail(sectionId);
     }
+  }
+
+  function renderGroupOnlyHome() {
+    updateBreadcrumb([]);
+    const group = ARCHIVE_DATA.sections.find(section => section.id === "grup-calismalari");
+    const count = getItemsByCategory("grup-calismalari").length;
+
+    appElement.innerHTML = `
+      <div class="view-header">
+        <div>
+          <span class="view-tag">SINIRLI ERİŞİM</span>
+          <h1 class="view-title">Grup Çalışmaları</h1>
+        </div>
+        <span class="view-count">${count} Kayıt</span>
+      </div>
+      <div class="grid-list grid-list-sections">
+        <a href="#/grup-calismalari" class="grid-card">
+          <div class="grid-card-left">
+            <span class="grid-card-badge">01</span>
+            <div class="grid-card-body">
+              <span class="grid-card-title">${escapeHtml(group.title)}</span>
+              <span class="grid-card-meta">${count} Kayıt</span>
+            </div>
+          </div>
+          <span class="grid-card-arrow">→</span>
+        </a>
+      </div>
+    `;
   }
 
   function navigateTo(path) {

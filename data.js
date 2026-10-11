@@ -193,10 +193,49 @@ const ARCHIVE_DATA = {
     { type: "github", title: "GitHub Deposu", url: "https://github.com/ademydev/derstakipsistemi" },
     { type: "website", title: "Canlı Site", url: "https://ademydev.github.io/derstakipsistemi/" },
   ]
+},
+
+{
+  id: 13,
+  title: "Fotosentez",
+  description: "Fotosentez konusuyla ilgili çalışmalar ve eğitim materyalleri.",
+  categories: ["Biyoloji", "siteler"],
+  links: [
+    {
+      type: "github",
+      title: "GitHub Deposu",
+      url: "https://github.com/ademydev/fotosentez"
+    }
+  ]
+},
+{
+  id: 14,
+  title: "P99name",
+  description: "P99name projesi.",
+  categories: ["Yazılım Çalışmaları", "yazilim-programlari"],
+  links: [
+    {
+      type: "github",
+      title: "GitHub Deposu",
+      url: "https://github.com/ademydev/p99name"
+    }
+  ]
+},
+{
+  id: 15,
+  title: "Kişisel Web Sitem",
+  description: "Kişisel çalışmalarımı, projelerimi ve kaynaklarımı bir araya getiren web sitesi.",
+  categories: ["siteler"],
+  links: [
+    {
+      type: "github",
+      title: "GitHub Deposu",
+      url: "https://github.com/ademydev/home"
+    }
+  ]
 }
 
   ]
+
 };
-
-
 
